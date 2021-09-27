@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
 
-function ItemForm({ items, onItemFormSubmit }) {
-// console.log(Array.isArray(props.items));
+function ItemForm(props) {
+
   const [formData, setFormData] = useState({
     name: "",
     category: "Produce"
@@ -23,7 +23,7 @@ function ItemForm({ items, onItemFormSubmit }) {
       category: formData.category
     };
     
-    onItemFormSubmit([...items, newItem]);
+    props.onItemFormSubmit(newItem);
   }
 
   return (
